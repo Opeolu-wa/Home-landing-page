@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+
+a  {
+    text-decoration: none;
+}
+
+
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+#header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#header .header {
+    min-height: 8vh;
+}
+
+#header .nav_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    padding: 10px 8px;
+    margin: auto;
+
+}
+
+#header .brand h1 {
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+#header .nav_list ul {
+    display: flex;
+    /* gap: 40px; */
+
+}
+
+#header .nav_list ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .9rem;
+    margin: 0 20px;
+
+}
+
+#header .nav_list ul li a {
+    color: white;
+    text-transform: uppercase;
+}
+
+#header .nav_list ul li::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s ease ;
+}
+
+#header .nav_list ul li:hover::after {
+    width: 100%;
+
+}
+
+
+#hero {
+    background-image: url(./media/pexels-maria-orlova-4947396.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -2;
+}
+
+#hero .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: center;
+}
+
+#hero .hero .content {
+    text-align: center;
+    color: white;
+}
+
+#hero .hero .content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+#hero .hero .content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+#hero .hero .content .buttons {
+    margin-top: 40px;
+}
+
+#hero .hero .content .buttons .btn {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 35px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #009688;
+    border-radius: 25px;
+    font-weight: 300;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin: 40px 10px;
+    text-align: center;
+}
+
+#hero .hero .content .buttons span {
+    background-color: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+#hero .hero .content .buttons .btn:hover span {
+    width: 100%;
+
+}
+
+
+/* media query for phone */
+
+@media only screen and (max-width:600px) {
+
+    /* header section */
+
+    #header .nav_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+        padding: 3px 8px;
+        margin: auto;
+    
+    }
+    #header .brand h1 {
+        font-size: 1.5rem;
+        color: white;
+        letter-spacing: 0rem;
+        text-transform: uppercase;
+    }
+
+    #header .nav_list ul li {
+        display: none;
+    
+    }
+
+
+
+    /*end header section */
+
+
+
+
+    /* hero section */
+
+
+    #hero .hero {
+        max-width: 550px;
+        margin: 0 auto;
+        padding: 0 20px;
+        justify-content: left;
+    }
+
+    #hero .hero .content {
+        width: 100%;
+        text-align: center;
+        color: white;
+        align-items: flex-start;
+        align-content: flex-start;
+    
+    }
+
+    #hero .hero .content h1 {
+        text-align: left;
+        width: 100%;
+        font-size: 60px;
+        margin-top: 250px;
+    }
+
+    #hero .hero .content p {
+        margin: 20px auto;
+        font-weight: 100;
+        line-height: 25px;
+        text-align: left;
+    }
+
+    #hero .hero .content .buttons {
+        margin-top: 50px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    
+    #hero .hero .content .buttons .btn {
+        position: relative;
+        overflow: hidden;
+        padding: 10px 35px;
+        color: white;
+        background-color: transparent;
+        border: 2px solid #009688;
+        border-radius: 25px;
+        font-weight: 300;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        margin: 10px 10px;
+        text-align: center;
+    }
+    
+    #hero .hero .content .buttons span {
+        background-color: #009688;
+        height: 100%;
+        width: 0;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    
+    #hero .hero .content .buttons .btn:hover span {
+        width: 100%;
+    
+    }
+
+    /* end hero section */
+}
+
+/* end media query for phone */
+
+
+
+/* media query for tablet */
+
+@media only screen and (min-width:600px) {
+/* header section */
+
+    #header .nav_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+        padding: 3px 8px;
+        margin: auto;
+
+    }
+    #header .brand h1 {
+        font-size: 1.3rem;
+        color: white;
+        letter-spacing: 0rem;
+        text-transform: uppercase;
+    }
+
+    #header .nav_list ul li {
+        position: relative;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: .7rem;
+        margin: 0 8px;
+        
+    }
+
+    #header .nav_list ul li a {
+        color: white;
+        text-transform: uppercase;
+    }
+
+
+/* end header section */
+
+}
+
+
+/* end media query for tablet */
+
+
+
+/* query for 800px */
+
+@media only screen and (min-width:800px) {
+
+    #header {
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: auto;
+    }
+    
+    #header .header {
+        min-height: 8vh;
+    }
+    
+    #header .nav_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+        padding: 10px 8px;
+        margin: auto;
+    
+    }
+    
+    #header .brand h1 {
+        font-size: 1.5rem;
+        color: white;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+    }
+    
+    #header .nav_list ul {
+        display: flex;
+        /* gap: 40px; */
+    
+    }
+    
+    #header .nav_list ul li {
+        position: relative;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: .9rem;
+        margin: 0 20px;
+    
+    }
+    
+    #header .nav_list ul li a {
+        color: white;
+        text-transform: uppercase;
+    }
+    
+    #header .nav_list ul li::after {
+        content: "";
+        height: 3px;
+        width: 0;
+        background: #009688;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s ease ;
+    }
+    
+    #header .nav_list ul li:hover::after {
+        width: 100%;
+    
+    }
+    #hero .hero {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 50px;
+        justify-content: center;
+    }
+    
+    #hero .hero .content {
+        text-align: center;
+        color: white;
+    }
+    
+    #hero .hero .content h1 {
+        font-size: 70px;
+        margin-top: 80px;
+    }
+    
+    #hero .hero .content p {
+        margin: 20px auto;
+        font-weight: 100;
+        line-height: 25px;
+    }
+    
+    #hero .hero .content .buttons {
+        margin-top: 40px;
+    }
+    
+    #hero .hero .content .buttons .btn {
+        position: relative;
+        overflow: hidden;
+        padding: 10px 35px;
+        color: white;
+        background-color: transparent;
+        border: 2px solid #009688;
+        border-radius: 25px;
+        font-weight: 300;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        margin: 40px 10px;
+        text-align: center;
+    }
+    
+    #hero .hero .content .buttons span {
+        background-color: #009688;
+        height: 100%;
+        width: 0;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    
+    #hero .hero .content .buttons .btn:hover span {
+        width: 100%;
+    
+    }
+}
+
+
+/* end query for 800px */
